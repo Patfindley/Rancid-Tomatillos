@@ -4,6 +4,9 @@ Our initial plan:
   App, Movies, Cards, Single card, API/Data, Data Flitering, SearchBar/Filter, Header. 
   
 *Where will data be stored?
-  
+  We plan on storing the Data in our App components file through API calls. 
   
 *How will information be passed around?
+  
+  
+  
