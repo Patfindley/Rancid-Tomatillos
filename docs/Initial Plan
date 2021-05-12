@@ -1,7 +1,7 @@
 Our initial plan:
 
 *What components do you envision needing?
-  App, Movies, Cards, Single card, API/Data, Data Flitering, SearchBar/Filter, Header. 
+  App, Movies, Cards, Single card, API/Data, Data Flitering, SearchBar/Filter, NavBar. 
   
 *Where will data be stored?
   We plan on storing the Data in our App components file through API calls. 
