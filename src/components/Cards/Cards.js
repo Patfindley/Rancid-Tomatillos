@@ -1,8 +1,9 @@
 import React from 'react';
+import Movies from '../Movies/Movies'
 import './Cards.css';
 
 function Cards() {
-  return <h1>Movies</h1>
+  return <Movies />
 }
 
 export default Cards;
