@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Cards from '../Cards/Cards.js'
-// import movieData from './MoviesData.js'
+import Cards from '../Cards/Cards.js';
+import movieData from '../../MovieData';
 import './App.css';
 
 
@@ -8,7 +8,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-
+      movies: movieData.movies
     }
   }
 
@@ -18,7 +18,7 @@ class App extends Component {
         <nav>
           <h3>NavBar</h3>
         </nav>
-        <Cards />
+        <Cards movies = {this.state.movies} />
         </div>
     )
   }
