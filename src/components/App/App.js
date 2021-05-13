@@ -18,7 +18,9 @@ class App extends Component {
         <nav>
           <h3>NavBar</h3>
         </nav>
+          <div className="card-container">
         <Cards movies = {this.state.movies} />
+          </div>
         </div>
     )
   }
