@@ -2,17 +2,13 @@ import React from 'react';
 import './Movies.css';
 
 class Movies extends React.Component {
-  constructor ({id, poster_path, backdrop_path, title, average_rating, release_date}) {
-    super({id, poster_path, backdrop_path, title, average_rating, release_date})
-    this.state = {
-    }
-    console.log(id)
+  constructor(props) {
+    super(props)
+    this.state = {}
   }
-  
+
   render() {
-    return (
-        <h2>MoviesClass</h2>
-    )
+    return this.props.movies.map(movie => <img className="card-image" src={movie.poster_path} alt={movie.title} key={movie.id}/>)
   }
 }
 
