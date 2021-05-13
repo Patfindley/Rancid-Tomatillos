@@ -8,7 +8,7 @@ class Movies extends React.Component {
   }
 
   render() {
-    return this.props.movies.map(movie => <img className="card-image" src={movie.poster_path} alt={movie.title} key={movie.id}/>)
+    return this.props.movies.map(movie => <img className="card" src={movie.poster_path} alt={movie.title} key={movie.id}/>)
   }
 }
 
