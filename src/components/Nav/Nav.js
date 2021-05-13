@@ -1,4 +1,6 @@
 import React from 'react';
+import SearchBar from '../SearchBar/SearchBar.js'
+
 // import './Nav.css'
 
 const Nav = () => {
@@ -7,6 +9,7 @@ const Nav = () => {
       <div>
         Rotten Tomatillos
       </div>
+      <SearchBar />
       <nav>
         Home
         Genre
