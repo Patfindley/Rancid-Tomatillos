@@ -2,8 +2,12 @@ import React from 'react';
 import './MovieInfo.css';
 
 
-export const Movie = (props) => {
+export const MovieInfo = (props) => {
   return (
-    <h1>HEY!</h1>
+    <div>
+      <section className='backdrop-container'>
+        <img className='backdrop' src={props.movies.backdrop_path} />
+      </section>
+    </div>
   )
 }
