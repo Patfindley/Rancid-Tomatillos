@@ -10,7 +10,6 @@ class Movies extends React.Component {
   }
 
   render() {
-
     return this.props.movies.map(movie =>
       <img className="card"
       src={movie.poster_path}
