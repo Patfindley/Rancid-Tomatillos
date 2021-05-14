@@ -5,7 +5,6 @@ import {getMovies, getSingleMovie} from '../../APIFetch'
 
 import './App.css';
 
-
 class App extends Component {
   constructor() {
     super();
