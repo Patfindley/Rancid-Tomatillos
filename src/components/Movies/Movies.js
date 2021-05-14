@@ -1,7 +1,5 @@
 import React from 'react';
 import './Movies.css';
-import MovieInfo from '../MovieInfo/MovieInfo';
-
 
 
 class Movies extends React.Component {
@@ -12,6 +10,7 @@ class Movies extends React.Component {
   }
 
   render() {
+
     return this.props.movies.map(movie =>
       <img className="card"
       src={movie.poster_path}
