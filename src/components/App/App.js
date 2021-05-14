@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
+import Nav from '../Nav/Nav';
 import Cards from '../Cards/Cards.js';
 import MovieInfo from '../MovieInfo/MovieInfo';
-// import movieData from '../../MovieData';
 import { getMovies, getSingleMovie } from '../../APIFetch'
-
 import './App.css';
-
 
 class App extends Component {
   constructor() {
@@ -24,7 +22,8 @@ class App extends Component {
 
   showSelectedMovie = (id) => {
     getSingleMovie(id)
-    .then(data => this.setState({selectedMovie: data.movie}))
+    .then(data => this.setState({selectedMovie: data.movie})
+    )
   }
 
   handleClick = event => {
@@ -37,9 +36,8 @@ class App extends Component {
   render() {
     return (
         <div>
-        <nav>
-          <h3>NavBar</h3>
-        </nav>
+          <Nav />
+          <body>
           <div className="card-container">
           {this.state.displayMovieInfo && this.state.selectedMovie &&
             <MovieInfo
@@ -54,6 +52,7 @@ class App extends Component {
             />
           }
           </div>
+          </body>
         </div>
     )
   }

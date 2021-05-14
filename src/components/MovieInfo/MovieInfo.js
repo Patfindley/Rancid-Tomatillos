@@ -18,7 +18,6 @@ import './MovieInfo.css';
 
 
 const MovieInfo = (props) => {
-  console.log(props, 'MovieInfo')
   return (
     <div className="movie-info">
       <section className='backdrop-container'>
