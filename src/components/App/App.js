@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Cards from '../Cards/Cards.js';
 import MovieInfo from '../MovieInfo/MovieInfo';
-import movieData from '../../MovieData';
+import {getMovies, getSingleMovie} from '../../APIFetch'
+
 import './App.css';
 
 
@@ -9,9 +10,14 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: movieData.movies,
+      movies: [],
       displayMovieInfo: false
     }
+  }
+
+  componentDidMount() {
+    getMovies()
+        .then(data => this.setState({movies: data.movies}))
   }
 
   handleClick = event => {
