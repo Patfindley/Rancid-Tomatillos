@@ -18,7 +18,6 @@ const oneMovie = {
 
 
 const MovieInfo = (props) => {
-  console.log(props, 'movieInfo')
   return (
     <div className="movie-info">
       <section className='backdrop-container'>
@@ -29,8 +28,6 @@ const MovieInfo = (props) => {
         onClick={event => props.handleClick(event)}
         />
       </section>
-      <h1>HELLOOOOOOO</h1>
-      {console.log('hi!')}
     </div>
   )
 }
