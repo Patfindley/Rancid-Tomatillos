@@ -1,6 +1,6 @@
 import React from 'react';
 import Movies from '../Movies/Movies'
-import MovieInfo from '../MovieInfo/MovieInfo';
+// import MovieInfo from '../MovieInfo/MovieInfo';
 
 import './Cards.css';
 
