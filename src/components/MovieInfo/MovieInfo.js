@@ -24,8 +24,8 @@ const MovieInfo = (props) => {
       <section className='backdrop-container'>
         <img
         className='backdrop'
-        src={props.selectedMovie.movie.backdrop_path}
-        alt={props.selectedMovie.movie.titles}
+        src={props.selectedMovie.backdrop_path}
+        alt={props.selectedMovie.titles}
         onClick={event => props.handleClick(event)}
         />
       </section>

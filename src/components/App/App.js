@@ -41,7 +41,7 @@ class App extends Component {
           <h3>NavBar</h3>
         </nav>
           <div className="card-container">
-          {this.state.displayMovieInfo &&
+          {this.state.displayMovieInfo && this.state.selectedMovie &&
             <MovieInfo
             selectedMovie={this.state.selectedMovie}
             handleClick={this.handleClick}
