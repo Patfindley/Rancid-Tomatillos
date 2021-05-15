@@ -25,22 +25,18 @@ const MovieInfo = (props) => {
   console.log(props.selectedMovie.overview)
   console.log(props.selectedMovie.genres)
   return (
-    <div className="movie-info">
-      <section className="movie-card-container">
+    <div className='movie-card-container'>
       <img onClick={event => props.handleClick(event)}
-          className='backdrop-image'
-          src={props.selectedMovie.backdrop_path}
-          alt={props.selectedMovie.title}
-      />
-      <section className='movie-card-info'>
-        <p className='movie-title'>{props.selectedMovie.title}</p>
-        <p className='movie-text'>{props.selectedMovie.release_date}</p>
-        <p className='movie-text'>{props.selectedMovie.runtime}</p>
-        <p className='movie-text'>{props.selectedMovie.average_rating}</p>
-        <p className='movie-text'>{props.selectedMovie.overview}</p>
-        <p className='movie-text'>{props.selectedMovie.genres}</p>
-      </section>
-      </section>
+          src= {props.selectedMovie.backdrop_path}
+          alt= {props.selectedMovie.title}/>
+      <div className='movie-text'>
+        <h3>Title: {props.selectedMovie.title}</h3>
+        <p>Release Date: {props.selectedMovie.release_date}</p>
+        <p>Runtime: {props.selectedMovie.runtime}</p>
+        <p>Average Rating: {props.selectedMovie.average_rating}</p>
+        <p>Overview: {props.selectedMovie.overview}</p>
+        <p>Genres: {props.selectedMovie.genres}</p>
+      </div>
     </div>
   )
 }
