@@ -20,11 +20,14 @@ body {
   border: 1px solid green;
 }
 
-.search-bar {
-  border: 1px solid green;
-}
-
 .nav-buttons {
   border: 1px solid green;
   display: flex;
+  width: 24%;
+}
+
+.nav-button-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }

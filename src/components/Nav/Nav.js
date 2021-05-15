@@ -9,10 +9,12 @@ const Nav = (props) => {
         Rotten Tomatillos
       </div>
       <SearchBar className='search-bar'/>
-      <nav className='nav-buttons'>
-        <h5 className='home-button'
-        onClick={props.returnHome} >Home</h5>
-        <h5 className='genre-button'>Search Genre</h5>
+      <nav className='nav-buttons' >
+        <div className='nav-button-container' >
+          <h5 className='home-button'
+          onClick={props.returnHome} >Home</h5>
+          <h5 className='genre-button'>Search Genre</h5>
+        </div>
       </nav>
     </header>
   )
