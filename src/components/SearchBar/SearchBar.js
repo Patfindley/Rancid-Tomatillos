@@ -1,4 +1,6 @@
 import React from 'react';
+import './SearchBar.css'
+
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -14,10 +16,10 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <form>
+      <form className='search-bar'>
         <input
           type='text'
-          placeholder='Find a Movie'
+          placeholder='Search By: Title, Genre, Rating'
           name='input'
           value={this.state.input}
           onChange={event => this.handleChange(event)}

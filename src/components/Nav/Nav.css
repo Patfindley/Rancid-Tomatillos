@@ -3,13 +3,32 @@ body {
 }
 
 .navbar {
-    height: 100px;
+    border: 1px solid pink;
     background-color: #6FD42E;
     color: black;
     margin-bottom: 15px;
     text-align: center;
     font-size: 30px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    height: 100px;
+    width: 80%;
+
+}
+
+.title {
+  /* border: 1px solid green; */
+}
+
+.nav-buttons {
+  /* border: 1px solid green; */
+  display: flex;
+  width: 24%;
+}
+
+.nav-button-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
