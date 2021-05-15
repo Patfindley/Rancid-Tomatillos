@@ -20,6 +20,12 @@ class App extends Component {
     .then(data => this.setState({movies: data.movies}))
   }
 
+  returnHome = () => {
+    this.setState({
+      displayMovieInfo: false
+    })
+  }
+
   showSelectedMovie = (id) => {
     getSingleMovie(id)
     .then(data => this.setState({selectedMovie: data.movie})
@@ -35,24 +41,27 @@ class App extends Component {
 
   render() {
     return (
-        <div>
-          <Nav />
-          <body>
-          <div className="card-container">
-          {this.state.displayMovieInfo && this.state.selectedMovie &&
-            <MovieInfo
-            selectedMovie={this.state.selectedMovie}
-            handleClick={this.handleClick}
-            />
-          }
-          {!this.state.displayMovieInfo &&
-            <Cards
-            movies={this.state.movies}
-            handleClick={this.handleClick}
-            />
-          }
-          </div>
-          </body>
+        <div className='site-container'>
+          <Nav
+          displayMovieInfo={this.state.displayMovieInfo}
+          returnHome={this.returnHome}
+          />
+          <section className='movie-display'>
+            <div className="card-container">
+              {this.state.displayMovieInfo && this.state.selectedMovie &&
+                <MovieInfo
+                selectedMovie={this.state.selectedMovie}
+                handleClick={this.handleClick}
+                />
+              }
+              {!this.state.displayMovieInfo &&
+                <Cards
+                movies={this.state.movies}
+                handleClick={this.handleClick}
+                />
+              }
+            </div>
+          </section>
         </div>
     )
   }

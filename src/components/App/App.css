@@ -6,12 +6,23 @@ body{
   background-color:#121212;
 }
 
+.site-container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.movie-display {
+  /* display: flex; */
+  margin: 0% 10%;
+}
+
 ::-webkit-scrollbar {
   width: 0;
 }
 
 .card-container {
   display: flex;
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
   width: 100%;
 }

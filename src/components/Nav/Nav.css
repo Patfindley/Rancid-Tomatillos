@@ -3,6 +3,7 @@ body {
 }
 
 .navbar {
+    border: 1px solid pink;
     height: 100px;
     background-color: #6FD42E;
     color: black;
@@ -10,6 +11,20 @@ body {
     text-align: center;
     font-size: 30px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    width: 90%;
+}
+
+.title {
+  border: 1px solid green;
+}
+
+.search-bar {
+  border: 1px solid green;
+}
+
+.nav-buttons {
+  border: 1px solid green;
+  display: flex;
 }
