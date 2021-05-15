@@ -18,15 +18,28 @@ import './MovieInfo.css';
 
 
 const MovieInfo = (props) => {
+  console.log(props.selectedMovie.title)
+  console.log(props.selectedMovie.release_date)
+  console.log(props.selectedMovie.runtime)
+  console.log(props.selectedMovie.average_rating)
+  console.log(props.selectedMovie.overview)
+  console.log(props.selectedMovie.genres)
   return (
     <div className="movie-info">
-      <section className='backdrop-container'>
-        <img
-        className='backdrop'
-        src={props.selectedMovie.backdrop_path}
-        alt={props.selectedMovie.titles}
-        onClick={event => props.handleClick(event)}
-        />
+      <section className="movie-card-container">
+      <img onClick={event => props.handleClick(event)}
+          className='backdrop-image'
+          src={props.selectedMovie.backdrop_path}
+          alt={props.selectedMovie.title}
+      />
+      <section className='movie-card-info'>
+        <p className='movie-title'>{props.selectedMovie.title}</p>
+        <p className='movie-text'>{props.selectedMovie.release_date}</p>
+        <p className='movie-text'>{props.selectedMovie.runtime}</p>
+        <p className='movie-text'>{props.selectedMovie.average_rating}</p>
+        <p className='movie-text'>{props.selectedMovie.overview}</p>
+        <p className='movie-text'>{props.selectedMovie.genres}</p>
+      </section>
       </section>
     </div>
   )
