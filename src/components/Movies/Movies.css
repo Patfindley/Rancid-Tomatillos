@@ -1,7 +1,7 @@
 .card {
     flex-shrink: 0;
-    width: 400px;
-    height: 500px;
+    width: 19.25%;
+    /* min-height: 500px; */
     border-radius: 10px;
     margin-left: 10px;
     background-size: cover;
