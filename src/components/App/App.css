@@ -26,3 +26,7 @@ body{
   width: 100%;
   /* margin-left: 4.7%; */
 }
+
+.load-error {
+  color:white;
+}

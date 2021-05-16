@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import Cards from '../Cards/Cards.js';
 import MovieInfo from '../MovieInfo/MovieInfo';
-import { getMovies, getSingleMovie, getSingleMovieTrailer } from '../../APIFetch'
+import { getMovies, getSelectedMovie } from '../../APIFetch'
 import './App.css';
 
 class App extends Component {
@@ -13,14 +13,19 @@ class App extends Component {
       selectedMovie: null,
       selectedMovieTrailer: null,
       displayMovieInfo: false,
-      error: null
+      error: ""
     }
   }
 
   componentDidMount() {
     getMovies()
-    .then(data => this.setState({movies: data.movies}))
-    .catch(error => this.setState({error: error}))
+        .then(data => {
+          this.setState({movies: data.movies})
+      })
+    .catch(error => {
+      this.setState({error: error.message})
+
+      })
   }
 
   returnHome = () => {
@@ -30,12 +35,16 @@ class App extends Component {
   }
 
   showSelectedMovie = (id) => {
-    getSingleMovie(id)
-    .then(data => this.setState({selectedMovie: data.movie}))
-    .catch(error => this.setState({error: error}))
-
-    getSingleMovieTrailer(id)
-    .then(data => this.setState({selectedMovieTrailer: data.videos}))
+    getSelectedMovie(id)
+        .then(data => {
+            this.setState({
+            selectedMovie: data.selectedMovieDetails,
+            selectedMovieTrailer: data.selectedMovieTrailer
+          })
+        })
+        .catch(error => {
+          this.setState({error: error.message})
+        })
   }
 
   handleClick = event => {
@@ -52,6 +61,7 @@ class App extends Component {
           />
           <section className='movie-display'>
             <div className="card-container">
+              {this.state.error && <h1 className="load-error">{this.state.error}</h1>}
               {this.state.displayMovieInfo && this.state.selectedMovie && this.state.selectedMovieTrailer &&
                 <MovieInfo
                 selectedMovie={this.state.selectedMovie}
