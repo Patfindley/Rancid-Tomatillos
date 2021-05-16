@@ -1,4 +1,4 @@
-export const getSingleMovie =(id) => {
+export const getSingleMovie = (id) => {
   return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
     .then(response => {
       if (response.ok) {
@@ -9,6 +9,16 @@ export const getSingleMovie =(id) => {
     })
 }
 
+export const getSingleMovieTrailer = (id) => {
+  return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}/videos`)
+  .then(response => {
+    if (response.ok) {
+      return response.json()
+    } else {throw new Error('Oh no! We couldnt find the trailer you were looking for!')
+
+    }
+  })
+}
 
 export const getMovies = () => {
   return fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')

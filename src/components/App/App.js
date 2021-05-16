@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import Cards from '../Cards/Cards.js';
 import MovieInfo from '../MovieInfo/MovieInfo';
-import { getMovies, getSingleMovie } from '../../APIFetch'
+import { getMovies, getSingleMovie, getSingleMovieTrailer } from '../../APIFetch'
 import './App.css';
 
 class App extends Component {
@@ -11,13 +11,16 @@ class App extends Component {
     this.state = {
       movies: [],
       selectedMovie: null,
-      displayMovieInfo: false
+      selectedMovieTrailer: null,
+      displayMovieInfo: false,
+      error: null
     }
   }
 
   componentDidMount() {
     getMovies()
     .then(data => this.setState({movies: data.movies}))
+    .catch(error => this.setState({error: error}))
   }
 
   returnHome = () => {
@@ -28,15 +31,16 @@ class App extends Component {
 
   showSelectedMovie = (id) => {
     getSingleMovie(id)
-    .then(data => this.setState({selectedMovie: data.movie})
-    )
+    .then(data => this.setState({selectedMovie: data.movie}))
+    .catch(error => this.setState({error: error}))
+
+    getSingleMovieTrailer(id)
+    .then(data => this.setState({selectedMovieTrailer: data.videos}))
   }
 
   handleClick = event => {
     this.showSelectedMovie(event.target.id)
-    this.setState({
-      displayMovieInfo: !this.state.displayMovieInfo
-    });
+    this.setState({displayMovieInfo: !this.state.displayMovieInfo});
   }
 
   render() {
@@ -48,9 +52,10 @@ class App extends Component {
           />
           <section className='movie-display'>
             <div className="card-container">
-              {this.state.displayMovieInfo && this.state.selectedMovie &&
+              {this.state.displayMovieInfo && this.state.selectedMovie && this.state.selectedMovieTrailer &&
                 <MovieInfo
                 selectedMovie={this.state.selectedMovie}
+                selectedMovieTrailer={this.state.selectedMovieTrailer}
                 handleClick={this.handleClick}
                 />
               }
