@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import Cards from '../Cards/Cards.js';
 import MovieInfo from '../MovieInfo/MovieInfo';
-import { getMovies, getSingleMovie, getSingleMovieTrailer } from '../../APIFetch'
+import { getMovies, getSingleMovie, getSingleMovieTrailer, getSelectedMovie } from '../../APIFetch'
 import './App.css';
 
 class App extends Component {
@@ -30,12 +30,23 @@ class App extends Component {
   }
 
   showSelectedMovie = (id) => {
-    getSingleMovie(id)
-    .then(data => this.setState({selectedMovie: data.movie}))
-    .catch(error => this.setState({error: error}))
+    getSelectedMovie(id)
+    .then(data => this.setState({
+      selectedMovie: data.selectedMovieDetails,
+      selectedMovieTrailer: data.selectedMovieTrailer
+    }))
 
-    getSingleMovieTrailer(id)
-    .then(data => this.setState({selectedMovieTrailer: data.videos}))
+    getSelectedMovie(id)
+    .then(data => console.log(data.selectedMovieDetails, data.selectedMovieTrailer))
+
+
+
+    // getSingleMovie(id)
+    // .then(data => this.setState({selectedMovie: data.movie}))
+    // .catch(error => this.setState({error: error}))
+    //
+    // getSingleMovieTrailer(id)
+    // .then(data => this.setState({selectedMovieTrailer: data.videos}))
   }
 
   handleClick = event => {
