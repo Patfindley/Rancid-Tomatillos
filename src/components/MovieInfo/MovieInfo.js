@@ -10,13 +10,6 @@ const MovieInfo = (props) => {
     let roundMin = Math.round(minutes);
     return `${roundNum}h ${roundMin}m`
   }
-  console.log(props, 'movieinfo')
-  console.log(props.selectedMovie.title)
-  console.log(props.selectedMovie.release_date)
-  console.log(props.selectedMovie.runtime)
-  console.log(props.selectedMovie.average_rating)
-  console.log(props.selectedMovie.overview)
-  console.log(props.selectedMovie.genres)
   return (
     <div className='movie-card-container'>
       <iframe width="900" height="506"
@@ -27,7 +20,6 @@ const MovieInfo = (props) => {
       </iframe>
       <div className='movie-stats-container'>
         <img
-        // onClick={event => props.handleClick(event)}
           className='backdrop-img'
           src={props.selectedMovie.poster_path}
           alt={props.selectedMovie.title}
@@ -43,6 +35,4 @@ const MovieInfo = (props) => {
   )
 }
 
-// <p className='movie-runtime'>Runtime: {props.selectedMovie.runtime}</p>
-// <p className='movie-genre'>{props.selectedMovie.genres}</p>
 export default MovieInfo;
