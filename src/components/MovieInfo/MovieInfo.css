@@ -44,6 +44,8 @@
 
 .movie-stats{
   /* position: absolute; */
+  /* display: flex; */
+  /* justify-content: center; */
   bottom: 20px;
   right: 20px;
   color: #6FD42E;
@@ -55,4 +57,8 @@
 
 .movie-title {
   width:auto;
+}
+
+.release-genre-run {
+  font-size: 20px;
 }
