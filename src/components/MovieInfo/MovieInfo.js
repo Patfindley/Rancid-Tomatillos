@@ -18,7 +18,6 @@ import './MovieInfo.css';
 
 
 const MovieInfo = (props) => {
-  console.log(props.selectedMovieTrailer[0], 'trailer')
   const trailerLoc = `https://www.youtube.com/embed/${props.selectedMovieTrailer[0].key}`
   // console.log(props.selectedMovie.title)
   // console.log(props.selectedMovie.release_date)
@@ -28,24 +27,27 @@ const MovieInfo = (props) => {
   // console.log(props.selectedMovie.genres)
   return (
     <div className='movie-card-container'>
-      <img onClick={event => props.handleClick(event)}
-          className='backdrop-img'
-          src={props.selectedMovie.backdrop_path}
-          alt={props.selectedMovie.title}
-          />
       <iframe width="560" height="315"
       src={trailerLoc}
       title="YouTube video player" frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen
+      > 'ello
       </iframe>
-      <div className='movie-text'>
-        <h3>Title: {props.selectedMovie.title}</h3>
-        <p>Release Date: {props.selectedMovie.release_date}</p>
-        <p>Runtime: {props.selectedMovie.runtime}</p>
-        <p>Average Rating: {props.selectedMovie.average_rating}</p>
-        <p>Overview: {props.selectedMovie.overview}</p>
-        <p>Genres: {props.selectedMovie.genres}</p>
+      <div className='movie-stats-container'>
+        <img onClick={event => props.handleClick(event)}
+          className='backdrop-img'
+          src={props.selectedMovie.poster_path}
+          // alt={props.selectedMovie.title}
+          />
+        <div className='movie-stats'>
+          <h3 className='movie-title'>{props.selectedMovie.title}</h3>
+          <p className='release-genre-run'>{props.selectedMovie.release_date}, {props.selectedMovie.genres.join('/')}, {props.selectedMovie.runtime}</p>
+          <p className='movie-runtime'>Runtime: {props.selectedMovie.runtime}</p>
+          <p className='movie-rating'>Average Rating: {props.selectedMovie.average_rating}</p>
+          <p className='movie-genre'>{props.selectedMovie.genres}</p>
+        </div>
       </div>
+      <p className='movie-overview'>Overview: {props.selectedMovie.overview}</p>
     </div>
   )
 }
