@@ -2,7 +2,7 @@ import React from 'react';
 import './MovieInfo.css';
 
 const MovieInfo = (props) => {
-  const trailerLoc = `https://www.youtube.com/embed/${props.selectedMovieTrailer[0].key}`
+  const trailerLoc = `https://www.youtube.com/embed/${props.selectedMovieTrailer.key}`
   const runtime = (props) => {
     let num = (props.selectedMovie.runtime / 60)
     let roundNum = Math.floor(num);
@@ -10,12 +10,6 @@ const MovieInfo = (props) => {
     let roundMin = Math.round(minutes);
     return `${roundNum}h ${roundMin}m`
   }
-  // console.log(props.selectedMovie.title)
-  // console.log(props.selectedMovie.release_date)
-  // console.log(props.selectedMovie.runtime)
-  // console.log(props.selectedMovie.average_rating)
-  // console.log(props.selectedMovie.overview)
-  // console.log(props.selectedMovie.genres)
   return (
     <div className='movie-card-container'>
       <iframe width="900" height="506"
