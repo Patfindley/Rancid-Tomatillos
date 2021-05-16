@@ -18,17 +18,26 @@ import './MovieInfo.css';
 
 
 const MovieInfo = (props) => {
-  console.log(props.selectedMovie.title)
-  console.log(props.selectedMovie.release_date)
-  console.log(props.selectedMovie.runtime)
-  console.log(props.selectedMovie.average_rating)
-  console.log(props.selectedMovie.overview)
-  console.log(props.selectedMovie.genres)
+  console.log(props.selectedMovieTrailer[0], 'trailer')
+  const trailerLoc = `https://www.youtube.com/embed/${props.selectedMovieTrailer[0].key}`
+  // console.log(props.selectedMovie.title)
+  // console.log(props.selectedMovie.release_date)
+  // console.log(props.selectedMovie.runtime)
+  // console.log(props.selectedMovie.average_rating)
+  // console.log(props.selectedMovie.overview)
+  // console.log(props.selectedMovie.genres)
   return (
     <div className='movie-card-container'>
       <img onClick={event => props.handleClick(event)}
-          src= {props.selectedMovie.backdrop_path}
-          alt= {props.selectedMovie.title}/>
+          className='backdrop-img'
+          src={props.selectedMovie.backdrop_path}
+          alt={props.selectedMovie.title}
+          />
+      <iframe width="560" height="315"
+      src={trailerLoc}
+      title="YouTube video player" frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
+      </iframe>
       <div className='movie-text'>
         <h3>Title: {props.selectedMovie.title}</h3>
         <p>Release Date: {props.selectedMovie.release_date}</p>
