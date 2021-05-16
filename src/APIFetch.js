@@ -1,27 +1,5 @@
 const movieApi = "https://rancid-tomatillos.herokuapp.com/api/v2"
 
-// export const getSingleMovie = (id) => {
-//   return fetch(`${movieApi}/movies/${id}`)
-//     .then(response => {
-//       if (response.ok) {
-//         return response.json()
-//       } else {
-//         throw new Error(`Uh oh! We can't find the movie you're looking for!`)
-//       }
-//     })
-// }
-//
-// export const getSingleMovieTrailer = (id) => {
-//   return fetch(`${movieApi}/movies/${id}/videos`)
-//   .then(response => {
-//     if (response.ok) {
-//       return response.json()
-//     } else {throw new Error('Oh no! We couldnt find the trailer you were looking for!')
-//
-//     }
-//   })
-// }
-
 export const getMovies = () => {
   return fetch(`${movieApi}/movies`)
   .then(response => {
@@ -33,8 +11,6 @@ export const getMovies = () => {
   })
 }
 
-
-
 export const getSelectedMovie = (id) => {
   const selectedMovieDetails = fetch(`${movieApi}/movies/${id}`)
       .then(response => {
@@ -45,7 +21,6 @@ export const getSelectedMovie = (id) => {
         }
       })
 
-
   const selectedMovieTrailer = fetch(`${movieApi}/movies/${id}/videos`)
     .then(response => {
       if (response.ok) {
@@ -54,7 +29,6 @@ export const getSelectedMovie = (id) => {
         throw new Error('Oh no! We couldnt find the trailer you were looking for!')
       }
     })
-
 
   return Promise.all([selectedMovieDetails, selectedMovieTrailer])
   .then(data => {
