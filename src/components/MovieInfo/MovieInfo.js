@@ -18,7 +18,7 @@ const MovieInfo = (props) => {
   // console.log(props.selectedMovie.genres)
   return (
     <div className='movie-card-container'>
-      <iframe width="560" height="315"
+      <iframe width="900" height="506"
       src={trailerLoc}
       title="YouTube video player" frameBorder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen
@@ -32,10 +32,9 @@ const MovieInfo = (props) => {
           alt={props.selectedMovie.title}
           />
         <div className='movie-stats'>
-          <h3 className='movie-title'>{props.selectedMovie.title}</h3><div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-
+          <h3 className='movie-title'>{props.selectedMovie.title}</h3>
           <p className='release-genre-run'>{props.selectedMovie.release_date.split('-').join('/')}, {props.selectedMovie.genres.join('/')}, {runtime(props)}</p>
-          <p className='movie-rating'>Average Rating: {props.selectedMovie.average_rating}/10</p>
+          <p className='movie-rating'>Average Rating: {props.selectedMovie.average_rating.toFixed(1)}/10</p>
         </div>
       </div>
       <p className='movie-overview'>Overview: {props.selectedMovie.overview}</p>

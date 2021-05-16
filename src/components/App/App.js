@@ -33,6 +33,7 @@ class App extends Component {
     getSingleMovie(id)
     .then(data => this.setState({selectedMovie: data.movie}))
     .catch(error => this.setState({error: error}))
+
     getSingleMovieTrailer(id)
     .then(data => this.setState({selectedMovieTrailer: data.videos}))
   }
