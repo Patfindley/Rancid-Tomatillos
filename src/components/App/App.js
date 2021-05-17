@@ -13,14 +13,19 @@ class App extends Component {
       selectedMovie: null,
       selectedMovieTrailer: null,
       displayMovieInfo: false,
-      error: null
+      error: ""
     }
   }
 
   componentDidMount() {
     getMovies()
-    .then(data => this.setState({movies: data.movies}))
-    .catch(error => this.setState({error: error}))
+        .then(data => {
+          this.setState({movies: data.movies})
+      })
+    .catch(error => {
+      this.setState({error: error.message})
+
+      })
   }
 
   returnHome = () => {
@@ -30,11 +35,18 @@ class App extends Component {
   }
 
   showSelectedMovie = (id) => {
-  getSelectedMovie(id)
-    .then(data => this.setState({
-      selectedMovie: data.selectedMovieDetails,
-      selectedMovieTrailer: data.selectedMovieTrailer
-    }))
+
+    getSelectedMovie(id)
+        .then(data => {
+            this.setState({
+            selectedMovie: data.selectedMovieDetails,
+            selectedMovieTrailer: data.selectedMovieTrailer
+          })
+        })
+        .catch(error => {
+          this.setState({error: error.message})
+        })
+
   }
 
   handleClick = event => {
@@ -51,6 +63,7 @@ class App extends Component {
           />
           <section className='movie-display'>
             <div className="card-container">
+              {this.state.error && <h1 className="load-error">{this.state.error}</h1>}
               {this.state.displayMovieInfo && this.state.selectedMovie && this.state.selectedMovieTrailer &&
                 <MovieInfo
                 selectedMovie={this.state.selectedMovie}
