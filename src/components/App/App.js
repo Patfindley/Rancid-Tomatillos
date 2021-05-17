@@ -35,6 +35,7 @@ class App extends Component {
   }
 
   showSelectedMovie = (id) => {
+
     getSelectedMovie(id)
         .then(data => {
             this.setState({
@@ -45,6 +46,7 @@ class App extends Component {
         .catch(error => {
           this.setState({error: error.message})
         })
+
   }
 
   handleClick = event => {

@@ -20,7 +20,6 @@ const MovieInfo = (props) => {
       </iframe>
       <div className='movie-stats-container'>
         <img
-        // onClick={event => props.handleClick(event)}
           className='backdrop-img'
           src={props.selectedMovie.poster_path}
           alt={props.selectedMovie.title}
@@ -36,6 +35,4 @@ const MovieInfo = (props) => {
   )
 }
 
-// <p className='movie-runtime'>Runtime: {props.selectedMovie.runtime}</p>
-// <p className='movie-genre'>{props.selectedMovie.genres}</p>
 export default MovieInfo;
