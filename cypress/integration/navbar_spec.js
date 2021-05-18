@@ -4,6 +4,7 @@ describe('Navbar', () => {
   })
 
   it("The navbar information should render on load", () => {
+    cy.get('.navbar').should('be.visible')
     cy.contains('.title', "Rotten Tomatillos")
     cy.contains('.nav-button-container', "Home")
     cy.contains('.nav-button-container', "Search Genre")
