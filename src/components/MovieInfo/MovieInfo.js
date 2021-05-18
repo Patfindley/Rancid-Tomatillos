@@ -2,6 +2,7 @@ import React from 'react';
 import './MovieInfo.css';
 
 const MovieInfo = (props) => {
+  // const style = {{backgroundImage: props.selectedMovie.backdrop_path}}
   const trailerLoc = `https://www.youtube.com/embed/${props.selectedMovieTrailer.key}`
   const runtime = (props) => {
     let num = (props.selectedMovie.runtime / 60)
@@ -10,10 +11,13 @@ const MovieInfo = (props) => {
     let roundMin = Math.round(minutes);
     return `${roundNum}h ${roundMin}m`
   }
+
   return (
-    <div className='movie-card-container'>
+    <div className='movie-card-container' style={{
+      backgroundImage: `url(${props.selectedMovie.backdrop_path})`
+    }}>
       <iframe width="900" height="506"
-      src={trailerLoc}
+      // src={trailerLoc}
       title="YouTube video player" frameBorder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen
       > 'ello
