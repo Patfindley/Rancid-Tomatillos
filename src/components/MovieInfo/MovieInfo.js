@@ -14,9 +14,10 @@ const MovieInfo = (props) => {
     <div className='movie-card-container'>
       <iframe width="900" height="506"
       src={trailerLoc}
+      alt={props.selectedMovie.title}
       title="YouTube video player" frameBorder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen
-      > 'ello
+      >
       </iframe>
       <div className='movie-stats-container'>
         <img
