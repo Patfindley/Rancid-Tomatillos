@@ -23,3 +23,7 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add("allMoviesPath", () => {
+  cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+  cy.visit('http://localhost:3000')
+})
