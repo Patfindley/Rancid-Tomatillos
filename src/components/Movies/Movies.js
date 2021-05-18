@@ -10,7 +10,7 @@ class Movies extends React.Component {
 
   render() {
     return this.props.movies.map(movie =>
-      <img className="card"
+      <img className="card {movie.id}"
       src={movie.poster_path}
       alt={movie.title}
       id={movie.id}
