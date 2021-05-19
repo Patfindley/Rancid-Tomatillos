@@ -73,7 +73,7 @@ class App extends Component {
                        render={() => (
                          // const { id } = match.params;
                          // const movieToRender = this.state.movies.find(movie => movie.id === parseInt(id));
-                           this.state.displayMovieInfo && <MovieInfo 
+                           this.state.selectedMovie && <MovieInfo 
                              selectedMovie={this.state.selectedMovie}
                              selectedMovieTrailer={this.state.selectedMovieTrailer}
                              handleClick={this.handleClick} /> 
@@ -90,8 +90,4 @@ class App extends Component {
 export default App;
 
 
-{/*{this.state.error && <h1 className="load-error">{this.state.error}</h1>}*/}
-{/*{this.state.displayMovieInfo && this.state.selectedMovie && this.state.selectedMovieTrailer &&*/}
 
-{/*}*/}
-{/*{!this.state.displayMovieInfo &&*/}
