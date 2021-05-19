@@ -56,29 +56,30 @@ class App extends Component {
     return (
         <div className='site-container'>
           <Nav
-          displayMovieInfo={this.state.displayMovieInfo}
-          returnHome={this.returnHome}
+              displayMovieInfo={this.state.displayMovieInfo}
+              returnHome={this.returnHome}
           />
           <section className='movie-display'>
             <div className="card-container">
               <Switch>
                 <Route exact path='/'
-                       render={() => 
+                       render={() =>
                            <Cards
-                         movies={this.state.movies}
-                         handleClick={this.handleClick}
-                         />
+                               movies={this.state.movies}
+                               handleClick={this.handleClick}
+                           />
                        }/>
                 <Route exact path='/:id'
-                       render={() => (
-                         // const { id } = match.params;
-                         // const movieToRender = this.state.movies.find(movie => movie.id === parseInt(id));
-                           this.state.selectedMovie && <MovieInfo 
-                             selectedMovie={this.state.selectedMovie}
-                             selectedMovieTrailer={this.state.selectedMovieTrailer}
-                             handleClick={this.handleClick} /> 
-                       )} />
-                         <Redirect to='/' />
+                       render={({match}) => {
+                           const { id } = match.params;
+                           const movieToRender = this.state.movies.find(movie => movie.id === parseInt(id));
+                           console.log(movieToRender)
+                           this.state.selectedMovie && <MovieInfo
+                               selectedMovie={this.state.selectedMovie}
+                               selectedMovieTrailer={this.state.selectedMovieTrailer}
+                               handleClick={this.handleClick} />
+                       }} />
+                <Redirect to='/' />
               </Switch>
             </div>
           </section>
