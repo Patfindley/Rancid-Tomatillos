@@ -1,5 +1,6 @@
 import React from 'react';
 import './Movies.css';
+import { Link } from 'react-router-dom';
 
 class Movies extends React.Component {
   constructor(props) {
@@ -10,13 +11,14 @@ class Movies extends React.Component {
 
   render() {
     return this.props.movies.map(movie =>
+     <Link to={`/${movie.id}`} key={movie.id}>
       <img className="card {movie.id}"
       src={movie.poster_path}
       alt={movie.title}
       id={movie.id}
-      key={movie.id}
       onClick={event => this.props.handleClick(event)}
       />
+       </Link>
     )
   }
 }
