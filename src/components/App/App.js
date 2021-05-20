@@ -13,7 +13,6 @@ class App extends Component {
       movies: [],
       selectedMovie: null,
       selectedMovieTrailer: null,
-      displayMovieInfo: false,
       error: ""
     }
   }
@@ -28,12 +27,6 @@ class App extends Component {
     })
   }
 
-  returnHome = () => {
-    this.setState({
-      displayMovieInfo: false
-    })
-  }
-
   showSelectedMovie = (id) => {
     getSelectedMovie(id)
         .then(data => {
@@ -45,22 +38,17 @@ class App extends Component {
         .catch(error => {
           this.setState({error: error.message})
         })
-        console.log(this.state, 'this.state')
   }
 
   handleClick = event => {
     this.showSelectedMovie(event.target.id)
-    console.log(this.state.displayMovieInfo, '1')
     this.setState({displayMovieInfo: !this.state.displayMovieInfo});
-    console.log(this.state.displayMovieInfo, '2')
   }
 
   render() {
     return (
         <div className='site-container'>
           <Nav
-              displayMovieInfo={this.state.displayMovieInfo}
-              returnHome={this.returnHome}
           />
           <section className='movie-display'>
             <div className="card-container">
