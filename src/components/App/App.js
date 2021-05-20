@@ -45,11 +45,14 @@ class App extends Component {
         .catch(error => {
           this.setState({error: error.message})
         })
+        console.log(this.state, 'this.state')
   }
 
   handleClick = event => {
     this.showSelectedMovie(event.target.id)
+    console.log(this.state.displayMovieInfo, '1')
     this.setState({displayMovieInfo: !this.state.displayMovieInfo});
+    console.log(this.state.displayMovieInfo, '2')
   }
 
   render() {
@@ -70,15 +73,12 @@ class App extends Component {
                            />
                        }/>
                 <Route exact path='/:id'
-                       render={({match}) => {
-                           const { id } = match.params;
-                           const movieToRender = this.state.movies.find(movie => movie.id === parseInt(id));
-                           console.log(movieToRender)
-                           this.state.selectedMovie && <MovieInfo
+                       render={() => (this.state.selectedMovie &&
+                                <MovieInfo
                                selectedMovie={this.state.selectedMovie}
                                selectedMovieTrailer={this.state.selectedMovieTrailer}
-                               handleClick={this.handleClick} />
-                       }} />
+                               handleClick={this.handleClick} />)
+                       } />
                 <Redirect to='/' />
               </Switch>
             </div>
@@ -89,6 +89,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-
