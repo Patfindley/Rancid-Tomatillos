@@ -13,7 +13,6 @@ class App extends Component {
       movies: [],
       selectedMovie: null,
       selectedMovieTrailer: null,
-      displayMovieInfo: false,
       error: ""
     }
   }
@@ -25,12 +24,6 @@ class App extends Component {
   })
     .catch(error => {
       this.setState({error: error.message})
-    })
-  }
-
-  returnHome = () => {
-    this.setState({
-      displayMovieInfo: false
     })
   }
 
@@ -56,8 +49,6 @@ class App extends Component {
     return (
         <div className='site-container'>
           <Nav
-              displayMovieInfo={this.state.displayMovieInfo}
-              returnHome={this.returnHome}
           />
           <section className='movie-display'>
             <div className="card-container">
@@ -70,15 +61,12 @@ class App extends Component {
                            />
                        }/>
                 <Route exact path='/:id'
-                       render={({match}) => {
-                           const { id } = match.params;
-                           const movieToRender = this.state.movies.find(movie => movie.id === parseInt(id));
-                           console.log(movieToRender)
-                           this.state.selectedMovie && <MovieInfo
+                       render={() => (this.state.selectedMovie &&
+                                <MovieInfo
                                selectedMovie={this.state.selectedMovie}
                                selectedMovieTrailer={this.state.selectedMovieTrailer}
-                               handleClick={this.handleClick} />
-                       }} />
+                               handleClick={this.handleClick} />)
+                       } />
                 <Redirect to='/' />
               </Switch>
             </div>
@@ -89,6 +77,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-

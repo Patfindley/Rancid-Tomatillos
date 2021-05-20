@@ -10,8 +10,8 @@ class Movies extends React.Component {
   }
 
   render() {
-    return this.props.movies.map(movie =>
-     <Link to={`/${movie.id}`} key={movie.id}>
+    return this.props.movies.map(movie => {
+     return <Link to={`/${movie.id}`} key={movie.id}>
       <img className="card {movie.id}"
       src={movie.poster_path}
       alt={movie.title}
@@ -19,7 +19,7 @@ class Movies extends React.Component {
       onClick={event => this.props.handleClick(event)}
       />
        </Link>
-    )
+    })
   }
 }
 
