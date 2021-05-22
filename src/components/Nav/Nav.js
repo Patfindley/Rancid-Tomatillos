@@ -10,8 +10,7 @@ const Nav = ({ handleChange, input, movies }) => {
         Rotten Tomatillos
       </div>
       </Link >
-      {
-        movies.length &&
+      {movies.length &&
         <form className='search-bar'>
           <input
             type='text'
@@ -20,8 +19,7 @@ const Nav = ({ handleChange, input, movies }) => {
             value={input}
             onChange={event => handleChange(event)}
             />
-        </form>
-      }
+        </form>}
       <nav className='nav-buttons' >
         <div className='nav-button-container' >
           <Link to="/" style={{textDecoration:'none'}}>
