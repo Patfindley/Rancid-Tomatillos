@@ -3,7 +3,7 @@ import SearchBar from '../SearchBar/SearchBar.js'
 import './Nav.css'
 import { Link, NavLink } from 'react-router-dom'
 
-const Nav = (props) => {
+const Nav = ({ handleChange, input, movies }) => {
   return (
     <header className="navbar">
       <Link to="/" style={{textDecoration:'none'}} >
@@ -11,7 +11,15 @@ const Nav = (props) => {
         Rotten Tomatillos
       </div>
       </Link >
-      <SearchBar className='search-bar'/>
+      {
+        movies.length &&
+        <Link to="/search">
+      <SearchBar className='search-bar'
+        handleChange={handleChange}
+        input={input}
+      />
+      </Link>
+      }
       <nav className='nav-buttons' >
         <div className='nav-button-container' >
           <Link to="/" style={{textDecoration:'none'}}>
