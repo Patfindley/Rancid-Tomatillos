@@ -32,3 +32,12 @@ body {
   width: 100%;
   justify-content: space-between;
 }
+
+.search-bar {
+  height: 20%;
+}
+
+input {
+  height: 175%;
+  width: 192%;
+}
