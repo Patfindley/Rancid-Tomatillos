@@ -62,7 +62,6 @@ class App extends Component {
   }
 
   renderFilteredMovies = filteredMovies => {
-    console.log("renderfiltered", this.state.filteredMovies)
     this.setState({filteredMovies: filteredMovies})
   }
 
