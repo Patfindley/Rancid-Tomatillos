@@ -25,7 +25,6 @@ describe('Navbar', () => {
     cy.get('form input[name="input"]').type('Peninsula')
         .should('have.value', 'Peninsula')
         .get('[id="581392"]').click()
-
   })
 
 })

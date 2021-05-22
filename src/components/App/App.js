@@ -53,7 +53,6 @@ class App extends Component {
   }
 
   searchMovies = () => {
-    const splitInput = this.state.input.split('');
     const filterMovies = this.state.movies.filter(movie => {
       const foundMovies = movie.title.toLowerCase().includes(this.state.input.toLowerCase())
       return foundMovies
@@ -63,6 +62,14 @@ class App extends Component {
 
   renderFilteredMovies = filteredMovies => {
     this.setState({filteredMovies: filteredMovies})
+  }
+
+  renderSearchError = () => {
+    return (
+      <article className="display-error">
+        <h4>We couldn't find that movie, try something else!</h4>
+      </article>
+    )
   }
 
   renderError = () => {
@@ -90,17 +97,20 @@ class App extends Component {
           }
           <section className='movie-display'>
             <div className="card-container">
+            {this.state.error &&
+              this.renderError()
+            }
               <Switch>
                 <Route exact path='/'
                        render={() => (
-                        !this.state.error ?
+                        !this.state.input.length && !this.state.filteredMovies.length ?
                           <div>
                             <Movies
                             movies={this.state.movies}
                             filteredMovies={this.state.filteredMovies}
                             handleClick={this.handleClick}
                             />
-                          </div> : this.renderError()
+                          </div> : this.renderSearchError()
                         )}/>
                 <Route exact path='/:id'
                        render={() => (this.state.selectedMovie &&
