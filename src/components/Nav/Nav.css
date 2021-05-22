@@ -34,22 +34,6 @@ body {
   justify-content: space-between;
 }
 
-
-@media screen and (max-width: 600px) {
-    .navbar {
-        font-size: 22px;
-        font-weight: 700;
-        margin-bottom: 15px;
-        width: 100%;
-    }
-    .nav-button-container {
-        display: flex;
-        justify-content: space-between;
-        /*align-items: flex-end;*/
-    }
-
-}
-
 .search-bar {
   height: 20%;
 }
@@ -57,5 +41,32 @@ body {
 input {
   height: 175%;
   width: 192%;
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        /*display: flex;*/
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .search-bar {
+        height: 12%;
+        width: 24%;
+    }
+
+    .nav-button-container {
+        /*justify-content: flex-start;*/
+        /*align-items: flex-end;*/
+        width: 12%;
+        font-size: 12px;
+    }
+
+    .nav-buttons {
+        /*display: flex;*/
+        width: 12%;
+    }
 }
 
