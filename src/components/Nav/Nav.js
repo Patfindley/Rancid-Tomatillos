@@ -1,5 +1,4 @@
 import React from 'react';
-import SearchBar from '../SearchBar/SearchBar.js'
 import './Nav.css'
 import { Link, NavLink } from 'react-router-dom'
 
@@ -11,13 +10,16 @@ const Nav = ({ handleChange, input, movies }) => {
         Rotten Tomatillos
       </div>
       </Link >
-      {
-        movies.length &&
-      <SearchBar className='search-bar'
-        handleChange={handleChange}
-        input={input}
-      />
-      }
+      {movies.length &&
+        <form className='search-bar'>
+          <input
+            type='text'
+            placeholder='Search By Title'
+            name='input'
+            value={input}
+            onChange={event => handleChange(event)}
+            />
+        </form>}
       <nav className='nav-buttons' >
         <div className='nav-button-container' >
           <Link to="/" style={{textDecoration:'none'}}>
@@ -31,3 +33,8 @@ const Nav = ({ handleChange, input, movies }) => {
 }
 
 export default Nav;
+
+// <SearchBar className='search-bar'
+//   handleChange={handleChange}
+//   input={input}
+// />

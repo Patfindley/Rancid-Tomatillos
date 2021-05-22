@@ -44,7 +44,6 @@ class App extends Component {
 
   handleClick = event => {
     this.showSelectedMovie(event.target.id)
-    this.setState({displayMovieInfo: !this.state.displayMovieInfo});
   }
 
   handleChange = (event) => {
@@ -63,7 +62,6 @@ class App extends Component {
   }
 
   renderFilteredMovies = filteredMovies => {
-    console.log("renderfiltered", this.state.filteredMovies)
     this.setState({filteredMovies: filteredMovies})
   }
 
