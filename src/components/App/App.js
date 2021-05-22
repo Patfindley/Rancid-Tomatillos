@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
-import Cards from '../Cards/Cards.js';
+import Movies from '../Movies/Movies'
 import MovieInfo from '../MovieInfo/MovieInfo';
 import { getMovies, getSelectedMovie } from '../../APIFetch'
 import { Route, Switch, Redirect } from 'react-router-dom';
@@ -27,7 +27,6 @@ class App extends Component {
     .catch(error => {
       this.setState({error: error.message})
     })
-    await console.log(this.state.movies)
   }
 
   showSelectedMovie = (id) => {
@@ -45,10 +44,10 @@ class App extends Component {
 
   handleClick = event => {
     this.showSelectedMovie(event.target.id)
-    this.setState({displayMovieInfo: !this.state.displayMovieInfo});
   }
 
   handleChange = (event) => {
+    event.preventDefault()
     this.setState({input: event.target.value})
     this.searchMovies()
   }
@@ -59,7 +58,6 @@ class App extends Component {
       const foundMovies = movie.title.toLowerCase().includes(this.state.input.toLowerCase())
       return foundMovies
     })
-    console.log(filterMovies, 'search Movies')
     this.renderFilteredMovies(filterMovies)
   }
 
@@ -82,20 +80,14 @@ class App extends Component {
               <Switch>
                 <Route exact path='/'
                        render={() =>
-                          !this.state.filteredMovies.length &&
-                          <Cards
+                         <div>
+                          <Movies
                           movies={this.state.movies}
+                          filteredMovies={this.state.filteredMovies}
                           handleClick={this.handleClick}
                           />
+                          </div>
                        }/>
-                       <Route exact path='/search'
-                              render={() =>
-                                 this.state.filteredMovies.length &&
-                                 <Cards
-                                 movies={this.state.filteredMovies}
-                                 handleClick={this.handleClick}
-                                 />
-                              }/>
                 <Route exact path='/:id'
                        render={() => (this.state.selectedMovie &&
                                 <MovieInfo
@@ -103,7 +95,6 @@ class App extends Component {
                                selectedMovieTrailer={this.state.selectedMovieTrailer}
                                handleClick={this.handleClick} />)
                        } />
-                <Redirect to='/' />
               </Switch>
             </div>
           </section>

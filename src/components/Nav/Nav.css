@@ -34,6 +34,7 @@ body {
   justify-content: space-between;
 }
 
+
 @media screen and (max-width: 600px) {
     .navbar {
         font-size: 22px;
@@ -48,3 +49,13 @@ body {
     }
 
 }
+
+.search-bar {
+  height: 20%;
+}
+
+input {
+  height: 175%;
+  width: 192%;
+}
+

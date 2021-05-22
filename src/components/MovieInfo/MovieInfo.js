@@ -2,7 +2,6 @@ import React from 'react';
 import './MovieInfo.css';
 
 const MovieInfo = (props) => {
-  console.log(props, 'movieinfo')
   // const style = {{backgroundImage: props.selectedMovie.backdrop_path}}
   const trailerLoc = `https://www.youtube.com/embed/${props.selectedMovieTrailer.key}`
   const runtime = (props) => {
