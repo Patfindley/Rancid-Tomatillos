@@ -6,6 +6,7 @@ function Cards(props) {
   return (
     <div>
     <Movies movies={props.movies}
+    filteredMovies={props.filteredMovies}
     handleClick={props.handleClick}
     />
     </div>
