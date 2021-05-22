@@ -1,8 +1,22 @@
 .search-bar {
+  /*display:flex;*/
   height: 20%;
 }
 
 input {
   height: 175%;
   width: 192%;
+}
+
+@media screen and (max-width: 600px) {
+  .search-bar {
+    align-items: flex-start;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: .8;
+    margin-top: 50px;
+    margin-left: 50px;
+
+  }
+
 }

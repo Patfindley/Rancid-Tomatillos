@@ -9,3 +9,15 @@
     background-position: center center;
     box-shadow: 0 0 6px 2px rgb(111, 212, 46);
 }
+
+@media screen and (max-width: 600px) {
+
+    .card {
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        justify-content: space-between;
+        margin-bottom: 10px;
+        height: 2%;
+        width: 95%;
+    }
+}

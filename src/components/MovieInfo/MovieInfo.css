@@ -1,6 +1,9 @@
 
 .card-container{
-    width: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+    /*width: 0;*/
 }
 
 .movie-card-container {
@@ -31,6 +34,7 @@
 
 .movie-stats-container {
   display: flex;
+  /*flex-direction: column;*/
   /*flex-wrap: wrap;*/
   /*justify-content: space-between;*/
   width: 900px;
@@ -58,7 +62,7 @@
   /*font-size: 2.5em;*/
   padding-left: 20px;
   padding-right: 20px;
-  /*padding-bottom: 47px;*/
+  padding-bottom: 47px;
 }
 
 .movie-title {

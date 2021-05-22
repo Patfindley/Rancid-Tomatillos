@@ -3,22 +3,23 @@ body {
 }
 
 .navbar {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    height: 100px;
+    width: 80%;
     border: 1px solid pink;
     background-color: #6FD42E;
     color: black;
     margin-bottom: 15px;
-    text-align: center;
     font-size: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
-    width: 80%;
-
 }
 
 .title {
-  /* border: 1px solid green; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .nav-buttons {
@@ -31,4 +32,19 @@ body {
   display: flex;
   width: 100%;
   justify-content: space-between;
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    .nav-button-container {
+        display: flex;
+        justify-content: space-between;
+        /*align-items: flex-end;*/
+    }
+
 }
