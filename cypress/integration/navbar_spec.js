@@ -1,6 +1,6 @@
 describe('Navbar', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000')
+    cy.visit('http://localhost:3000', { fixture: 'Movies_test.json'})
   })
 
   it("The navbar information should render on load", () => {
@@ -11,7 +11,7 @@ describe('Navbar', () => {
   })
 
   it("Should contain a searchBar input", () => {
-    cy.get('form input[placeholder="Search By: Title, Genre, Rating"]')
+    cy.get('form input[placeholder="Search By Title"]')
         .get('form input[type="text"]')
         .get('form input[name="input"]')
   })
@@ -19,6 +19,13 @@ describe('Navbar', () => {
   it('should be able to type into the search input and see that value in the input', () => {
     cy.get('form input[name="input"]').type('Peninsula')
         .should('have.value', 'Peninsula')
+  })
+
+  it('should find movies by name', () => {
+    cy.get('form input[name="input"]').type('Peninsula')
+        .should('have.value', 'Peninsula')
+        .get('[id="581392"]').click()
+
   })
 
 })
