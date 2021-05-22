@@ -11,26 +11,26 @@ describe('Movies', () => {
     .get('h3, [class="display-error"]')
   })
 
-it('Should show error if movie details cannot be fetched', () => {
-  cy.intercept(
+  it('Should show error if movie details cannot be fetched', () => {
+    cy.intercept(
     {
       method: 'GET',
       url: 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919'
     },
     {statusCode: 404, body:''}
-  )
+    )
     .intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', { fixture: 'Movies_test.json'})
     .visit('http://localhost:3000/')
     .get('[id="694919"]').click()
     .url().should('eq', 'http://localhost:3000/694919')
     .get('h3, [class="display-error"]')
+  })
+
+  it('Should show error if search shows no results', () => {
+    cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', { fixture: 'Movies_test.json'})
+    .visit('http://localhost:3000/')
+    .get('form input[name="input"]').type('sponge bob')
+    .get('h3, [class="display-error"]')
+
+  })
 })
-
-
-})
-
-// cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {fixture: 'MovieInfo_test.json'})
-//   .intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', { fixture: 'Movies_test.json'})
-//   .visit('http://localhost:3000/')
-//   .get('[id="694919"]').click()
-//   .url().should('eq', 'http://localhost:3000/694919')
