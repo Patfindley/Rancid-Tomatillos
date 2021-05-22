@@ -13,12 +13,10 @@ const Nav = ({ handleChange, input, movies }) => {
       </Link >
       {
         movies.length &&
-        <Link to="/search">
       <SearchBar className='search-bar'
         handleChange={handleChange}
         input={input}
       />
-      </Link>
       }
       <nav className='nav-buttons' >
         <div className='nav-button-container' >
