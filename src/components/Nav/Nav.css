@@ -2,15 +2,15 @@ body {
     margin: 0;
 }
 
-.navbar {
+.nav-bar {
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
     text-align: center;
     height: 100px;
-    width: 80%;
-    border: 1px solid pink;
+    width: 81%;
     background-color: #6FD42E;
+    border-radius: 10px;
     color: black;
     margin-bottom: 15px;
     font-size: 30px;
@@ -18,24 +18,21 @@ body {
 
 .title {
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    margin-left: 6%;
 }
 
-.nav-buttons {
-  /* border: 1px solid green; */
-  display: flex;
-  width: 24%;
-}
-
-.nav-button-container {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
+.header-button {
+  border-radius: 10px;
+  width: 200px;
+  text-align:  center;
+  background-color: #6FD42E;
+  color: black;
 }
 
 .search-bar {
   height: 20%;
+  width: 40%;
+  padding-right: 19%;
 }
 
 input {
@@ -43,8 +40,41 @@ input {
   width: 192%;
 }
 
+@media screen and (max-width: 1024px) {
+
+  .nav-bar {
+    font-size: 25px;
+  }
+
+  .search-bar {
+    width: 38%;
+    padding-right: 18%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .title {
+    width: 57%;
+    margin-left: 10%
+  }
+
+  .search-bar {
+    width: 58%;
+    padding-right: 34%;
+  }
+
+.nav-buttons {
+  padding-right: 5%;
+}
+
+  .home {
+    width: 81%;
+  }
+}
+
 @media screen and (max-width: 600px) {
-    .navbar {
+    .nav-bar {
         /*display: flex;*/
         font-size: 22px;
         font-weight: 700;
@@ -52,21 +82,22 @@ input {
         width: 100%;
     }
 
-    .search-bar {
-        height: 12%;
-        width: 24%;
-    }
-
-    .nav-button-container {
-        /*justify-content: flex-start;*/
-        /*align-items: flex-end;*/
-        width: 12%;
-        font-size: 12px;
-    }
-
-    .nav-buttons {
-        /*display: flex;*/
-        width: 12%;
-    }
 }
 
+@media screen and (max-width: 425px) {
+  .nav-buttons {
+    padding-right: 19%;
+  }
+
+  .header-button {
+    width: 181px;
+  }
+
+  .search-bar {
+    width: .25em;
+  }
+
+  input {
+    width: 1em;
+  }
+}
