@@ -18,12 +18,19 @@
 
 
 @media screen and (max-width: 600px) {
+
+  .movie-link {
+    flex: 0 0 auto;
+    width: 60%;
+    margin: 7% 0 0 1%
+  }
+
     .card {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin-bottom: 10px;
-        height: 2%;
-        width: 95%;
-    }
+      overflow-x: scroll;
+      overflow-y: hidden;
+      white-space: nowrap;
+      width: 94.25%;
+      /* height: -moz-fit-content; */
+      flex: 0 0 auto;
+  }
 }
