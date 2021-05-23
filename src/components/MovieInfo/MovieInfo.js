@@ -33,9 +33,9 @@ const MovieInfo = (props) => {
           <h3 className='movie-title'>{props.selectedMovie.title}</h3>
           <p className='release-genre-run'>{props.selectedMovie.release_date.split('-').join('/')}, {props.selectedMovie.genres.join('/')}, {runtime(props)}</p>
           <p className='movie-rating'>Average Rating: {props.selectedMovie.average_rating.toFixed(1)}/10</p>
+          <p className='movie-overview'>Overview: {props.selectedMovie.overview}</p>
         </div>
       </div>
-      <p className='movie-overview'>Overview: {props.selectedMovie.overview}</p>
     </div>
   )
 }
