@@ -20,12 +20,8 @@ body{
   width: 81%
 }
 
-/* ::-webkit-scrollbar {
-  width: 0;
-} */
-
 .card-container {
-  display: grid;
+  display: block;
   /* overflow-x: scroll; */
   width: 100%;
   /* margin-left: 4.7%; */
@@ -36,13 +32,11 @@ body{
 }
 
 @media screen and (max-width: 600px) {
-  ::-webkit-scrollbar {
-    width: 0px;
-  }
-
-  .card-container {
-    display: flex;
+  .site-container {
+    flex-direction: column;
     overflow-x: scroll;
     width: 100%;
   }
 }
+
+

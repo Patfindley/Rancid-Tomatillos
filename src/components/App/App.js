@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Nav from '../Nav/Nav';
 import Movies from '../Movies/Movies'
 import MovieInfo from '../MovieInfo/MovieInfo';
-import { getMovies, getSelectedMovie } from '../../APIFetch'
-import { Route, Switch, Redirect } from 'react-router-dom';
+import {getMovies, getSelectedMovie} from '../../APIFetch'
+import {Redirect, Route, Switch} from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -55,8 +55,7 @@ class App extends Component {
   searchMovies = () => {
     const splitInput = this.state.input.split('');
     const filterMovies = this.state.movies.filter(movie => {
-      const foundMovies = movie.title.toLowerCase().includes(this.state.input.toLowerCase())
-      return foundMovies
+      return movie.title.toLowerCase().includes(this.state.input.toLowerCase())
     })
     this.renderFilteredMovies(filterMovies)
   }
@@ -96,6 +95,7 @@ class App extends Component {
                                handleClick={this.handleClick} />)
                        } />
               </Switch>
+              <Redirect to = "/" />
             </div>
           </section>
         </div>
