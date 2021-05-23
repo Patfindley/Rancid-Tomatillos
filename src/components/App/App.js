@@ -32,9 +32,9 @@ class App extends Component {
   showSelectedMovie = (id) => {
     getSelectedMovie(id)
         .then(data => {
-            this.setState({
-            selectedMovie: data.selectedMovieDetails,
-            selectedMovieTrailer: data.selectedMovieTrailer
+          this.setState({
+          selectedMovie: data.selectedMovieDetails,
+          selectedMovieTrailer: data.selectedMovieTrailer
           })
         })
         .catch(error => {
@@ -78,7 +78,7 @@ class App extends Component {
         <h3>{this.state.error}</h3>
           <Link to='/'>
             <h4 className="back-to-home" onClick={() => this.setState({error: ""})}>
-            Back To Main
+              Back To Main
             </h4>
           </Link>
       </article>
@@ -87,30 +87,27 @@ class App extends Component {
 
   render() {
     return (
-        <div className='site-container'>
-          {this.state.movies &&
-          <Nav
-            handleChange={this.handleChange}
-            input={this.state.input}
-            movies={this.state.movies}
-          />
-          }
+          <div className='site-container'>
+            {this.state.movies &&
+              <Nav
+                handleChange={this.handleChange}
+                input={this.state.input}
+                movies={this.state.movies}
+              />
+            }
           <section className='movie-display'>
             <div className="card-container">
-            {this.state.error &&
-              this.renderError()
-            }
               <Switch>
                 <Route exact path='/'
                        render={() => (
-                        !this.state.input.length && !this.state.filteredMovies.length ?
+                        !this.state.error ?
                           <div>
                             <Movies
                             movies={this.state.movies}
                             filteredMovies={this.state.filteredMovies}
                             handleClick={this.handleClick}
                             />
-                          </div> : this.renderSearchError()
+                          </div> : this.renderError()
                         )}/>
                 <Route exact path='/:id'
                        render={() => (this.state.selectedMovie &&
