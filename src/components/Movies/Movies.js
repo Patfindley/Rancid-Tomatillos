@@ -15,12 +15,9 @@ const Movies =({ movies, filteredMovies, handleClick, inputValue, renderSearchEr
        </Link>
     })
   } else if (inputValue && !filteredMovies.length) {
-    console.log(movies.length, 'error movies')
-    console.log(filteredMovies.length, 'filtered')
-      return renderSearchError()
+    return renderSearchError()
     } else {
     return movies.map(movie => {
-      console.log(movies.length, 'movies')
      return <Link to={`/${movie.id}`} key={movie.id}>
       <img className="card {movie.id}"
       src={movie.poster_path}
