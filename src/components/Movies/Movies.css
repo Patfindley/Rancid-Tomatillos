@@ -34,3 +34,24 @@
       flex: 0 0 auto;
   }
 }
+
+@media screen and (max-width: 425px) {
+
+  .movie-link {
+    width: 69%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+
+  .movie-link {
+    width: 78%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+
+  .movie-link {
+    width: 90%;
+  }
+}
