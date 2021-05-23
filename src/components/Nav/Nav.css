@@ -90,7 +90,7 @@ input {
   }
 
   .header-button {
-    width: 181px;
+    width: 156px;
   }
 
   .search-bar {
@@ -98,6 +98,13 @@ input {
   }
 
   input {
-    width: 1em;
+    width: 9em;
+  }
+}
+
+@media screen and (max-width: 375px) {
+
+  .header-button {
+    width: 133px;
   }
 }
