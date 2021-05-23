@@ -17,14 +17,10 @@ body{
 }
 
 .movie-display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   width: 81%
-}
-
-.card-container {
-  display: block;
-  /* overflow-x: scroll; */
-  width: 100%;
-  /* margin-left: 4.7%; */
 }
 
 .load-error {
@@ -38,5 +34,3 @@ body{
     width: 100%;
   }
 }
-
-

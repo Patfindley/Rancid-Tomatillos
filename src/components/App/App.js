@@ -3,7 +3,7 @@ import Nav from '../Nav/Nav';
 import Movies from '../Movies/Movies'
 import MovieInfo from '../MovieInfo/MovieInfo';
 import {getMovies, getSelectedMovie} from '../../APIFetch'
-import {Redirect, Route, Switch} from 'react-router-dom';
+import {Redirect, Route, Switch, Link} from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -95,20 +95,17 @@ class App extends Component {
               />
             }
           <section className='movie-display'>
-            <div className="card-container">
               <Switch>
                 <Route exact path='/'
                        render={() => (
                         !this.state.error ?
-                          <div>
                             <Movies
                             movies={this.state.movies}
                             filteredMovies={this.state.filteredMovies}
                             handleClick={this.handleClick}
                             renderSearchError={this.renderSearchError}
                             inputValue={this.state.input}
-                            />
-                          </div> : this.renderError()
+                            /> : this.renderError()
                         )}/>
                 <Route exact path='/:id'
                        render={() => (this.state.selectedMovie &&
@@ -120,7 +117,6 @@ class App extends Component {
                         )}/>
               </Switch>
               <Redirect to = "/" />
-            </div>
           </section>
         </div>
     )

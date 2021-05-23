@@ -1,14 +1,21 @@
-.card {
-    flex-shrink: 0;
-    width: 19.25%;
-    /* min-height: 500px; */
-    border-radius: 10px;
-    margin-left: 10px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    box-shadow: 0 0 6px 2px rgb(111, 212, 46);
+.movie-link {
+  width: 19.25%;
+  margin-top: 6px;
 }
+
+.card {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 100%;
+  /* min-height: 500px; */
+  border-radius: 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  box-shadow: 0 0 6px 2px rgb(111, 212, 46);
+}
+
 
 @media screen and (max-width: 600px) {
     .card {
