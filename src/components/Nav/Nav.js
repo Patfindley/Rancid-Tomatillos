@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 
 const Nav = ({ handleChange, input, movies }) => {
   return (
-    <header className="navbar">
+    <header className="nav-bar">
       <Link to="/" style={{textDecoration:'none'}} >
         <div className='title'>
-          Rotten Tomatillos
+          <h5 className='header-button'>Rotten Tomatillos</h5>
         </div>
       </Link >
         {movies.length &&
@@ -21,11 +21,9 @@ const Nav = ({ handleChange, input, movies }) => {
             />
           </form>}
         <nav className='nav-buttons' >
-          <div className='nav-button-container' >
             <Link to="/" style={{textDecoration:'none'}}>
-            <h5 className='home-button'>Home</h5>
+            <h5 className='home header-button'>Home</h5>
             </Link >
-          </div>
         </nav>
     </header>
   )
