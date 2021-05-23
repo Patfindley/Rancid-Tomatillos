@@ -25,7 +25,6 @@ const Nav = ({ handleChange, input, movies }) => {
             <Link to="/" style={{textDecoration:'none'}}>
             <h5 className='home-button'>Home</h5>
             </Link >
-            <h5 className='genre-button'>Search Genre</h5>
           </div>
         </nav>
     </header>
