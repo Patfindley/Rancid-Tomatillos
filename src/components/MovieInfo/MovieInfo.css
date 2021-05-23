@@ -1,9 +1,6 @@
 
 .card-container{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-    /*width: 0;*/
+    width: 0;
 }
 
 .movie-card-container {
@@ -34,7 +31,6 @@
 
 .movie-stats-container {
   display: flex;
-  /*flex-direction: column;*/
   /*flex-wrap: wrap;*/
   /*justify-content: space-between;*/
   width: 900px;
@@ -58,11 +54,13 @@
   /*bottom: 20px;*/
   right: 20px;
   color: #6FD42E;
+  background-color: black;
   font-weight: bolder;
   /*font-size: 2.5em;*/
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 47px;
+  box-shadow: 0 0 6px 2px rgb(111, 212, 46);
 }
 
 .movie-title {
@@ -84,4 +82,13 @@
 /*  color: #6FD42E;*/
 /*  text-shadow: 1px 1px 2px black;*/
 /*  padding-right: 20px;*/
+}
+
+.home-button {
+  border-radius: 10px;
+  width: 200px;
+  text-align:  center;
+  background-color: #6FD42E;
+  color: black;
+  font-size: 1.5rem;
 }
