@@ -34,4 +34,11 @@ body{
     overflow-x: scroll;
     width: 100%;
   }
+
+  .movie-display {
+      display: flex;
+      width: 100%;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+  }
 }

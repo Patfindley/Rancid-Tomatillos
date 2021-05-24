@@ -28,15 +28,17 @@ const MovieInfo = (props) => {
           src={props.selectedMovie.poster_path}
           alt={props.selectedMovie.title}
         />
-        <div className='movie-stats'>
+        <div className='movie-stats stats-wrap'>
           <h3 className='movie-title'>{props.selectedMovie.title}</h3>
           <p className='release-genre-run'>{props.selectedMovie.release_date.split('-').join('/')}, {props.selectedMovie.genres.join('/')}, {runtime(props)}</p>
           <p className='movie-rating'>Average Rating: {props.selectedMovie.average_rating.toFixed(1)}/10</p>
-          <p className='movie-overview'>Overview: {props.selectedMovie.overview}</p>
           <Link to="/" style={{textDecoration:'none'}}>
-            <h5 className='home-button'>Return Home</h5>
           </Link >
         </div>
+      </div>
+      <div className="overview-container stats-wrap">
+      <p className='movie-overview'>{props.selectedMovie.overview}</p>
+      <h5 className='home-button'>Return Home</h5>
       </div>
     </div>
   )

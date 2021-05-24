@@ -23,25 +23,41 @@
     transform: scale(1.1);
 }
 
-/*.card-img:hover {*/
-/*    transition: transform .5s ease;*/
-/*}*/
-
-/*.card:hover img {*/
-/*    transform: scale(1.5);*/
-/*}*/
-
-
 @media screen and (max-width: 600px) {
-    .card {
-        flex-shrink: 0;
-        width: 300px;
-        height: 200px;
-        border-radius: 10px;
-        margin-left: 10px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
 
-    }
+  .movie-link {
+    flex: 0 0 auto;
+    width: 60%;
+    margin: 7% 0 0 1%
+  }
+
+    .card {
+      overflow-x: scroll;
+      overflow-y: hidden;
+      white-space: nowrap;
+      width: 94.25%;
+      /* height: -moz-fit-content; */
+      flex: 0 0 auto;
+  }
+}
+
+@media screen and (max-width: 425px) {
+
+  .movie-link {
+    width: 69%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+
+  .movie-link {
+    width: 78%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+
+  .movie-link {
+    width: 90%;
+  }
 }
