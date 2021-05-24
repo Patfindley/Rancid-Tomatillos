@@ -24,8 +24,20 @@ body{
   width: 81%
 }
 
+.display-error {
+  width: 100%;
+  text-align: center;
+}
+
+.error-message {
+  color: #6FD42E;
+  font-size: 2em;
+  text-align: center;
+}
+
 .load-error {
-  color:white;
+  color: #6FD42E;
+  font-size: 2em;
 }
 
 @media screen and (max-width: 600px) {
