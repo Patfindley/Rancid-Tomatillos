@@ -80,6 +80,16 @@ iframe {
   margin-bottom: 20px;
 }
 
+.tomatillo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.tomatillo {
+  width: 8%;
+  filter: invert(66%) sepia(90%) saturate(427%) hue-rotate(47deg) brightness(98%) contrast(82%);
+}
+
 .movie-overview {
   color: #6FD42E;
   font-size: 1.3em;

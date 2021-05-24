@@ -67,7 +67,7 @@ class App extends Component {
   renderSearchError = () => {
     return (
       <article className="display-error">
-        <h4>We couldn't find that movie, try something else!</h4>
+        <h4 className="error-message">We couldn't find that movie, try something else!</h4>
       </article>
     )
   }
