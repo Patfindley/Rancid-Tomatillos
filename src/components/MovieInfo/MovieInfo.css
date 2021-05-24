@@ -113,8 +113,7 @@ iframe {
 
 .tomatillo {
   width: 8%;
-  fill: #6FD42E;
-  color: #6FD42E;
+  filter: invert(66%) sepia(90%) saturate(427%) hue-rotate(47deg) brightness(98%) contrast(82%);
 }
 
 .movie-overview {
