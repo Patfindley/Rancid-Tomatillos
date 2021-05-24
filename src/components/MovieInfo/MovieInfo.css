@@ -106,6 +106,17 @@ iframe {
 
 }
 
+.tomatillo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.tomatillo {
+  width: 8%;
+  fill: #6FD42E;
+  color: #6FD42E;
+}
+
 .movie-overview {
   color: #6FD42E;
 /*  bottom: 20px;*/
