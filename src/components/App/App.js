@@ -45,7 +45,8 @@ class App extends Component {
   handleClick = event => {
     this.showSelectedMovie(event.target.id)
   }
-
+  
+  
   handleChange = (event) => {
     event.preventDefault()
     this.setState({input: event.target.value})
