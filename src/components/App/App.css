@@ -33,6 +33,8 @@ body{
     flex-direction: column;
     overflow-x: scroll;
     width: 100%;
+    margin:0;
+    padding:0;
   }
 
   .movie-display {
@@ -40,5 +42,7 @@ body{
       width: 100%;
       flex-wrap: nowrap;
       overflow-x: auto;
+      margin:0;
+      padding:0;
   }
 }
