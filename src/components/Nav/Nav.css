@@ -21,6 +21,10 @@ body {
     margin-left: 6%;
 }
 
+.header-button:hover {
+    background-color: #4d9c20;
+}
+
 .header-button {
   border-radius: 10px;
   width: 200px;
