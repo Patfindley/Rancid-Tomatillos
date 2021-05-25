@@ -52,7 +52,9 @@ const MovieInfo = ({ selectedMovie, selectedMovieTrailer, handleClick }) => {
       </div>
       <div className="overview-container stats-wrap">
       <p className='movie-overview'>{selectedMovie.overview}</p>
-      <h5 className='home-button'>Return Home</h5>
+        <Link to="/" style={{textDecoration:'none'}}>
+          <h5 className='home-button'>Return Home</h5>
+        </Link >
       </div>
     </div>
   )
