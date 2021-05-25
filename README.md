@@ -30,10 +30,13 @@
 ## In Action
 Desktop View: User is greeted with movie cards display and navigation bar. Can click on movie poster to find more information on that movie.
 ![](https://user-images.githubusercontent.com/71860165/119421000-ecefa780-bcba-11eb-910e-f86ac8608b8a.gif)
+
 Desktop View: User can search for a movie title from the search function in the navigation bar.
 ![](https://user-images.githubusercontent.com/71860165/119421949-1d384580-bcbd-11eb-9134-c43860849ecc.gif)
+
 Tablet View: User can see the list of movies and click on to a movie poster to find the movie details.
 ![](https://user-images.githubusercontent.com/71860165/119421339-ba927a00-bcbb-11eb-94c0-1831388ad3e7.gif)
+
 Mobile View: User can scroll through the available movies and click on a single movie for more details.
 ![](https://user-images.githubusercontent.com/71860165/119421550-2ffe4a80-bcbc-11eb-9d1f-20da1032ea5f.gif)
 
