@@ -1,23 +1,61 @@
+.movie-link {
+  width: 19.25%;
+  margin-top: 6px;
+}
+
 .card {
-    flex-shrink: 0;
-    width: 19.25%;
-    /* min-height: 500px; */
-    border-radius: 10px;
-    margin-left: 10px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    box-shadow: 0 0 6px 2px rgb(111, 212, 46);
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 100%;
+  border-radius: 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  box-shadow: 0 0 6px 2px rgb(111, 212, 46);
+}
+
+.card:hover {
+    width: 100%;
+    overflow: visible;
+    transition: transform .5s ease;
+    transform: scale(1.1);
 }
 
 @media screen and (max-width: 600px) {
 
+  .movie-link {
+    flex: 0 0 auto;
+    width: 60%;
+    margin: 7% 0 0 1%
+  }
+
     .card {
-        /*display: flex;*/
-        /*flex-direction: column;*/
-        justify-content: space-between;
-        margin-bottom: 10px;
-        height: 2%;
-        width: 95%;
-    }
+      overflow-x: scroll;
+      overflow-y: hidden;
+      white-space: nowrap;
+      width: 94.25%;
+      flex: 0 0 auto;
+  }
+}
+
+@media screen and (max-width: 425px) {
+
+  .movie-link {
+    width: 69%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+
+  .movie-link {
+    width: 78%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+
+  .movie-link {
+    width: 90%;
+  }
 }

@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Nav from '../Nav/Nav';
 import Movies from '../Movies/Movies'
 import MovieInfo from '../MovieInfo/MovieInfo';
-import { getMovies, getSelectedMovie } from '../../APIFetch'
-import { Route, Switch, Redirect } from 'react-router-dom';
+import {getMovies, getSelectedMovie} from '../../APIFetch'
+import {Redirect, Route, Switch, Link} from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -14,7 +14,7 @@ class App extends Component {
       selectedMovie: null,
       selectedMovieTrailer: null,
       filteredMovies: [],
-      input: '',
+      input: "",
       error: ""
     }
   }
@@ -32,9 +32,9 @@ class App extends Component {
   showSelectedMovie = (id) => {
     getSelectedMovie(id)
         .then(data => {
-            this.setState({
-            selectedMovie: data.selectedMovieDetails,
-            selectedMovieTrailer: data.selectedMovieTrailer
+          this.setState({
+          selectedMovie: data.selectedMovieDetails,
+          selectedMovieTrailer: data.selectedMovieTrailer
           })
         })
         .catch(error => {
@@ -45,7 +45,8 @@ class App extends Component {
   handleClick = event => {
     this.showSelectedMovie(event.target.id)
   }
-
+  
+  
   handleChange = (event) => {
     event.preventDefault()
     this.setState({input: event.target.value})
@@ -53,10 +54,8 @@ class App extends Component {
   }
 
   searchMovies = () => {
-    const splitInput = this.state.input.split('');
     const filterMovies = this.state.movies.filter(movie => {
-      const foundMovies = movie.title.toLowerCase().includes(this.state.input.toLowerCase())
-      return foundMovies
+      return movie.title.toLowerCase().includes(this.state.input.toLowerCase())
     })
     this.renderFilteredMovies(filterMovies)
   }
@@ -65,38 +64,60 @@ class App extends Component {
     this.setState({filteredMovies: filteredMovies})
   }
 
+  renderSearchError = () => {
+    return (
+      <article className="display-error">
+        <h4 className="error-message">We couldn't find that movie, try something else!</h4>
+      </article>
+    )
+  }
+
+  renderError = () => {
+    return (
+      <article className="display-error">
+        <h3>{this.state.error}</h3>
+          <Link to='/'>
+            <h4 className="back-to-home" onClick={() => this.setState({error: ""})}>
+              Back To Main
+            </h4>
+          </Link>
+      </article>
+    )
+  }
+
   render() {
     return (
-        <div className='site-container'>
-          {this.state.movies &&
-          <Nav
-            handleChange={this.handleChange}
-            input={this.state.input}
-            movies={this.state.movies}
-          />
-          }
+          <div className='site-container'>
+            {this.state.movies &&
+              <Nav
+                handleChange={this.handleChange}
+                input={this.state.input}
+                movies={this.state.movies}
+              />
+            }
           <section className='movie-display'>
-            <div className="card-container">
               <Switch>
                 <Route exact path='/'
-                       render={() =>
-                         <div>
-                          <Movies
-                          movies={this.state.movies}
-                          filteredMovies={this.state.filteredMovies}
-                          handleClick={this.handleClick}
-                          />
-                          </div>
-                       }/>
+                       render={() => (
+                        !this.state.error ?
+                            <Movies
+                            movies={this.state.movies}
+                            filteredMovies={this.state.filteredMovies}
+                            handleClick={this.handleClick}
+                            renderSearchError={this.renderSearchError}
+                            inputValue={this.state.input}
+                            /> : this.renderError()
+                        )}/>
                 <Route exact path='/:id'
                        render={() => (this.state.selectedMovie &&
-                                <MovieInfo
-                               selectedMovie={this.state.selectedMovie}
-                               selectedMovieTrailer={this.state.selectedMovieTrailer}
-                               handleClick={this.handleClick} />)
-                       } />
+                        !this.state.error ?
+                          <MovieInfo
+                            selectedMovie={this.state.selectedMovie}
+                            selectedMovieTrailer={this.state.selectedMovieTrailer}
+                            handleClick={this.handleClick} /> : this.renderError()
+                        )}/>
               </Switch>
-            </div>
+              <Redirect to = "/" />
           </section>
         </div>
     )

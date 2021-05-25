@@ -14,35 +14,47 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 50px;
 }
 
 .movie-display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   width: 81%
 }
 
-/* ::-webkit-scrollbar {
-  width: 0;
-} */
-
-.card-container {
-  display: grid;
-  /* overflow-x: scroll; */
+.display-error {
   width: 100%;
-  /* margin-left: 4.7%; */
+  text-align: center;
+}
+
+.error-message {
+  color: #6FD42E;
+  font-size: 2em;
+  text-align: center;
 }
 
 .load-error {
-  color:white;
+  color: #6FD42E;
+  font-size: 2em;
 }
 
 @media screen and (max-width: 600px) {
-  ::-webkit-scrollbar {
-    width: 0px;
-  }
-
-  .card-container {
-    display: flex;
+  .site-container {
+    flex-direction: column;
     overflow-x: scroll;
     width: 100%;
+    margin:0;
+    padding:0;
+  }
+
+  .movie-display {
+      display: flex;
+      width: 100%;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      margin:0;
+      padding:0;
   }
 }
