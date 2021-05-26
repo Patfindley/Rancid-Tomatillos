@@ -19,8 +19,9 @@
 ![Cypress](https://raw.githubusercontent.com/Patfindley/Rancid-Tomatillos/25ac5c4b3941fe684eea3a131326de53a6b87134/public/cypressBadge.svg)
 ![JS badge](https://raw.githubusercontent.com/Patfindley/Rancid-Tomatillos/03e69184a775a8e44332257b29eaaa15c30caf62/public/JSbadge.svg)
 ![css badge](https://raw.githubusercontent.com/Patfindley/Rancid-Tomatillos/117f340fce44b8578c6de9a91b736b23f7e0c8ef/public/css3Badge.svg)
-![lighthouse photo](https://github.com/bhohnco/Rancid-Tomatillos/blob/main/public/Lighthouse%20Score.png?raw=true)
 ![html5 badge](https://raw.githubusercontent.com/Patfindley/Rancid-Tomatillos/a07176db3cb51dd06ad00da4192e31f464986222/public/html5Badge.svg)
+
+![lighthouse photo](https://github.com/Patfindley/Rancid-Tomatillos/blob/main/public/lighthouse.png?raw=true)
 
 Javascript, React, React-Router, Cypress, CSS, Surge, Google Lighthouse
 ---
