@@ -14,7 +14,7 @@
 * Gain a deeper understanding of the differences between class & functional components
 
 ## Technology Used
-![](https://github.com/bhohnco/Rancid-Tomatillos/blob/main/public/react-logo.png?raw=true)
+![react badge](https://raw.githubusercontent.com/Patfindley/Rancid-Tomatillos/c11c14e7d6a8976bc3cd90d88074f8f9f7881288/public/reactbadge.svg)
 ![](https://raw.githubusercontent.com/Patfindley/Rancid-Tomatillos/efe985bef9a9020a44c3525c6b82442ea297a86b/public/reactbadge.svg)
 ![Cypress](https://raw.githubusercontent.com/Patfindley/Rancid-Tomatillos/25ac5c4b3941fe684eea3a131326de53a6b87134/public/cypressBadge.svg)
 ![JS badge](https://raw.githubusercontent.com/Patfindley/Rancid-Tomatillos/03e69184a775a8e44332257b29eaaa15c30caf62/public/JSbadge.svg)
