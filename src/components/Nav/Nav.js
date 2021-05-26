@@ -7,7 +7,7 @@ const Nav = ({ handleChange, input, movies }) => {
     <header className="nav-bar">
       <Link to="/" style={{textDecoration:'none'}} >
         <div className='title'>
-          <h5 className='header-button'>Rotten Tomatillos</h5>
+          <h5 className='header-button'>Rancid Tomatillos</h5>
         </div>
       </Link >
         {movies.length &&
